@@ -1,6 +1,8 @@
 # Go Microservices
 
-A collection of Microservices that demonstrates how to build microservices with the Go programming language. These microservices can be deployed in different ways. The main branch is intented for local development only. I will build other branches to demonstration how they can be deployed to Kubernetes or Docker Swarm. This is a work in progress so it should not be considered production grade. The choices made here are simple and for learning purposes only so far.
+A collection of Microservices that demonstrates how to build microservices with the Go programming language. These microservices can be deployed in different ways.
+
+The main branch is intended for local development only. I will build other branches to demonstrate how they can be deployed to Kubernetes or Docker Swarm. This is a work in progress. The choices made here are simple and so far are for learning purposes only.
 
 ## Running Locally
 
