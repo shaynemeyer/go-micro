@@ -2,6 +2,6 @@
 .DS_Store
 
 # exclude db & rabbitmq data
-project/db-data/mongo
-project/db-data/postgres
-project/db-data/rabbitmq
+project/db-data/mongo/*
+project/db-data/postgres/*
+project/db-data/rabbitmq/*
