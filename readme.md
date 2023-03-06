@@ -2,6 +2,34 @@
 
 A collection of Microservices that demonstrates how to build microservices with the Go programming language. These microservices can be deployed in different ways. The main branch is intented for local development only. I will build other branches to demonstration how they can be deployed to Kubernetes or Docker Swarm. This is a work in progress so it should not be considered production grade. The choices made here are simple and for learning purposes only so far.
 
+## Running Locally
+
+- Make sure you have Docker installed.
+- Make sure you have Go installed.
+- Make sure you have Make installed.
+
+## Start Services with Make
+
+Make sure you have Docker running.
+
+### Start Services & Website
+
+```bash
+cd project/
+make up_build # Start the services
+make start # Start the website
+```
+
+- Web -> [http://localhost](http://localhost)
+- MailHog -> [http://localhost:8025](http://localhost:8025)
+
+### Stop Services & Website
+
+```bash
+make down # Stop the services
+make stop # Stop the website
+```
+
 ## Services
 
 - Frontend - Web UI
@@ -14,3 +42,9 @@ A collection of Microservices that demonstrates how to build microservices with 
 ### Other
 
 - project - Make & docker-compose for all projects
+
+## Todos
+
+- Tests
+- Documentation
+- More useful UI.
