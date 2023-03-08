@@ -2,13 +2,13 @@
 
 A collection of Microservices that demonstrates how to build microservices with the Go programming language. These microservices can be deployed in different ways.
 
-The main branch is intended for local development only. I will build other branches to demonstrate how they can be deployed to Kubernetes or Docker Swarm. This is a work in progress. The choices made here are simple and so far are for learning purposes only.
+The main branch is intended for local development only. This branch demonstrates how this stack can be deployed to Kubernetes. This is a work in progress. The choices made here are simple and so far are for learning purposes only.
 
 ## Running Locally
 
 - Make sure you have Docker installed.
-- Make sure you have Go installed.
-- Make sure you have Make installed.
+- Make sure you have minikube.
+- Make sure you have kubectl.
 
 ## Start Services with Make
 
@@ -18,18 +18,26 @@ Make sure you have Docker running.
 
 ```bash
 cd project/
-make up_build # Start the services
-make start # Start the website
+minikube start --nodes=2
+kubectl apply -f k8s
+kubectl get pods
+kubectl get svc
+kubectl status
 ```
 
-- Web -> [http://localhost](http://localhost)
-- MailHog -> [http://localhost:8025](http://localhost:8025)
+#### Start Postgres Container
+
+```bash
+docker-compose -f postgres.yml up -d
+```
+
+- Web -> [http://frontend.info](http://frontend.info)
 
 ### Stop Services & Website
 
 ```bash
-make down # Stop the services
-make stop # Stop the website
+multikube stop
+docker-compose -f postgres.yml down
 ```
 
 ## Services

@@ -36,6 +36,7 @@
 
 {{define "js"}}
     <script>
+        let brokerURL = {{.BrokerURL}};
         let brokerBtn = document.getElementById("brokerBtn");
         let authBrokerBtn = document.getElementById("authBrokerBtn");
         let logBtn = document.getElementById("logBtn");
@@ -99,7 +100,7 @@
                 headers
             }
 
-            fetch("http://localhost:8080/log-grpc", body)
+            fetch(brokerURL + "/log-grpc", body)
             .then((response) => response.json())
             .then((data) => {
                 sent.innerHTML = JSON.stringify(payload, undefined, 4);
@@ -134,7 +135,7 @@
                 headers
             }
 
-            fetch("http://localhost:8080/handle", body)
+            fetch(brokerURL + "/handle", body)
             .then((response) => response.json())
             .then((data) => {
                 sent.innerHTML = JSON.stringify(payload, undefined, 4);
@@ -169,7 +170,7 @@
                 headers
             }
 
-            fetch("http://localhost:8080/handle", body)
+            fetch(brokerURL + "/handle", body)
             .then((response) => response.json())
             .then((data) => {
                 sent.innerHTML = JSON.stringify(payload, undefined, 4);
