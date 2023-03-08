@@ -55,6 +55,7 @@ docker-compose -f postgres.yml down
 
 ## Todos
 
+- Update the Makefile to support K8s workflow.
 - Tests
 - Documentation
 - More useful UI.
